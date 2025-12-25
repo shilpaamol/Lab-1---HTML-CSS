@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Document</title>
+    <meta name="description" content="A sample website">
 </head>
+
 <body>
-    
+    <a href="#id_about">About</a>
+    <a href="#id_interests">Interests</a>
+    <a href="#id_goals">Goals</a>
+    <a href="#id_contact">Contact</a>
+
+    <section id="id_about">
+        <h2>About Me</h2>
+
+        <img src="https://placehold.co/100x100.png" alt="A portrait at my workspace" width="100" height="100">
+
+        <p>I grew up in Chicago, and one of my fondest childhood memories is bullding a treehouse with my brother. That
+            experience sparked my curiosity and love for creating things.</p>
+
+        <table id="id_table">
+            <tr>
+                <th>Quick Facts</th>
+                <td>Web Development</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>San Francisco</td>
+            </tr>
+            <tr>
+                <th>Favourite Tool</th>
+                <td>VS Code</td>
+            </tr>
+        </table>
+
+
+    </section>
+
+    <section id="id_interests"></section>
+
+    <h2>Academic Interests & Hobbies</h2>
+    <h4>I became interested in web development after taking an introductory course in college.</h4>
+
+    <ul>
+        <li>DIY Electronics – I like leaming how things work</li>
+        <li>Hiking – It's a great way to clear my mind</li>
+        <li>Photography – Capturing the beauty Of nature</li>
+    </ul>
+
+    <img src="https://placehold.co/100x100.png" alt="A portrait at my workspace" width="100" height="100">
+
+    <img src="https://placehold.co/100x100.png" alt="A portrait at my workspace" width="100" height="100"><br>
+    </section>
+
+    <section id="id_goals">
+        <h2>Future Goals</h2>
+        <p>One of my main goals is to become a front-end developer so I can build user-friendly websites that make a
+            difference.</p>
+    </section>
+
+    <section id="id_contact">
+        <h2>Contact Me</h2>
+        <form action="" method="post">
+            <label for="id_fullname">Name:</label>
+            <input type="text" id="id_fullname" name="name_fullname">
+
+            <label for="id_email">Email:</label>
+            <input type="email" id="id_email" name="name_email"><br>
+
+            <label for="id_message">Message:</label>
+            <input type="text" id="id_message" name="name_message"><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
 </body>
+
 </html>
