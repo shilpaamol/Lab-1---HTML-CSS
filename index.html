@@ -4,76 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Document</title>
-    <meta name="description" content="A sample website">
+    <title>Lab 1 - HTML & CSS</title>
+    <meta name="description" content="DA558A HT25: Lab 1 - HTML & CSS">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <a href="#id_about">About</a>
-    <a href="#id_interests">Interests</a>
-    <a href="#id_goals">Goals</a>
-    <a href="#id_contact">Contact</a>
+    <a class="menu" href="https://www.linkedin.com/in/amollahane/" target="_blank">External Page</a>
+    <a class="menu" href="#ContactMeSection">Contact</a>
+    <a class="menu" href="#GoalsSection">Goals</a>
+    <a class="menu" href="#InterestsSection">Interests</a>
+    <a class="menu" href="#AboutMeSection">About</a>
 
-    <section id="id_about">
-        <h2>About Me</h2>
+    <section id="AboutMeSection">
+        <h2 id="AboutMeCaption">About Me</h2>
 
-        <img src="https://placehold.co/100x100.png" alt="A portrait at my workspace" width="100" height="100">
+        <div class="about-me-grid-container">
+            <img id="AboutMeImage" class="about-me-grid-item" src="images/Profile.jpeg" alt="A portrait at my workspace"
+                width="200" height="200">
 
-        <p>I grew up in Chicago, and one of my fondest childhood memories is bullding a treehouse with my brother. That
-            experience sparked my curiosity and love for creating things.</p>
+            <div id="AboutMeTextAndTable" class="about-me-grid-item">
+                <p id="AboutMeText">I grew up in Chicago, and one of my fondest childhood memories is bullding a
+                    treehouse with my brother. That experience sparked my curiosity and love for creating things.</p>
 
-        <table id="id_table">
-            <tr>
-                <th>Quick Facts</th>
-                <td>Web Development</td>
-            </tr>
-            <tr>
-                <th>City</th>
-                <td>San Francisco</td>
-            </tr>
-            <tr>
-                <th>Favourite Tool</th>
-                <td>VS Code</td>
-            </tr>
-        </table>
-
-
+                <table id="AboutMeTable">
+                    <tr>
+                        <th>Quick Facts</th>
+                        <td>Web Development</td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>San Francisco</td>
+                    </tr>
+                    <tr>
+                        <th>Favourite Tool</th>
+                        <td>VS Code</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </section>
 
-    <section id="id_interests"></section>
+    <section id="InterestsSection"></section>
 
     <h2>Academic Interests & Hobbies</h2>
     <h4>I became interested in web development after taking an introductory course in college.</h4>
 
     <ul>
-        <li>DIY Electronics – I like leaming how things work</li>
-        <li>Hiking – It's a great way to clear my mind</li>
-        <li>Photography – Capturing the beauty Of nature</li>
+        <li>DIY Electronics: I like leaming how things work</li>
+        <li>Hiking: It's a great way to clear my mind</li>
+        <li>Photography: Capturing the beauty Of nature</li>
     </ul>
 
-    <img src="https://placehold.co/100x100.png" alt="A portrait at my workspace" width="100" height="100">
+    <img src="images/Hobbies1.png" alt="A portrait at my workspace" width="200" height="200">
 
-    <img src="https://placehold.co/100x100.png" alt="A portrait at my workspace" width="100" height="100"><br>
+    <img src="images/Hobbies2.png" alt="A portrait at my workspace" width="200" height="200">
     </section>
 
-    <section id="id_goals">
+    <section id="GoalsSection">
         <h2>Future Goals</h2>
         <p>One of my main goals is to become a front-end developer so I can build user-friendly websites that make a
             difference.</p>
     </section>
 
-    <section id="id_contact">
+    <section id="ContactMeSection">
         <h2>Contact Me</h2>
         <form action="" method="post">
-            <label for="id_fullname">Name:</label>
-            <input type="text" id="id_fullname" name="name_fullname">
+            <label for="fullname">Name:</label>
+            <input type="text" id="fullname" class="formField" name="name_fullname" placeholder="Your name..">
 
-            <label for="id_email">Email:</label>
-            <input type="email" id="id_email" name="name_email"><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="formField" name="name_email"
+                placeholder="firstname.lastname@provider.com">
 
-            <label for="id_message">Message:</label>
-            <input type="text" id="id_message" name="name_message"><br>
-
+            <label for="message">Message:</label><br>
+            <textarea id="message" class="formField" name="name_message" rows="4" cols="10" wrap="soft"
+                placeholder="Write something.."></textarea> </textarea>
             <input type="submit" value="Submit">
         </form>
     </section>

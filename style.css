@@ -1,0 +1,62 @@
+* {
+  /*for debugging*/
+  /*border: 1px solid red;*/
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', cursive;
+}
+
+html {
+  background-color: rgb(222, 222, 222);
+}
+
+#AboutMeImage {
+  border-radius: 50%;
+}
+
+.menu {
+  float: right;
+  padding: 0 10px 0 10px;
+  margin: 0 10px 0 0;
+}
+
+.about-me-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  column-gap: 20px;
+}
+
+#AboutMeTable,
+th,
+td {
+  border: 1px solid blue;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: left;
+}
+
+li {
+  margin: 10px 0;
+}
+
+input[type=text],
+textarea,
+#email {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
