@@ -30,6 +30,7 @@ Success Message:
 // Store them in variables for easy access
 const form = document.getElementById("idContactMeForm");
 const formFirstName = document.getElementById("idFirstName");
+const formFirstNameMsg = document.getElementById("idFirstNameMsg");
 const formLastName = document.getElementById("idLastName");
 const formEmail = document.getElementById("idEmail");
 const formPhone = document.getElementById("idPhone");
@@ -48,14 +49,13 @@ const formResetBtn = document.getElementById("idResetButton");
 // 6. clearForm() - Clear all form fields after successful submission
 
 // Real-time Character Counter:
-// Update counter "x/20 characters" as user types
+// Update message/counter as "x/20 characters" as user types
 formMessage.addEventListener("keyup", function(){
-    const text = formMessage.value;
-    const count = text.length;
-    formMsgCharCount.textContent = (`${count}/20 characters`);
+    const msgCharCount = formMessage.value.length;
+    formMsgCharCount.textContent = (`${msgCharCount}/20 characters`);
 
     // Change message color to red if below 20 characters, else change color to green
-    formMessage.style.color = (count < 20) ? "red" : "green";
+    formMessage.style.color = (msgCharCount < 20) ? "red" : "green";
 });
 
 // Form Submission:
@@ -66,8 +66,8 @@ form.addEventListener("submit", function(event){
     // if all validations are successful submit the form and clear it
     if (validateInputs())
     {
-        console.log("Form submitted via JavaScript after performing all validations.");
-        form.submit();
+        alert("The form submitted sucessfully.");
+        form.submit();        
     }
     else
     {
@@ -75,8 +75,25 @@ form.addEventListener("submit", function(event){
     }
 });
 
+function validateFirstName()
+{
+    var regExp = /[a-zA-Z]/;
+    if (!regExp.test(formFirstName.value))
+    {
+        formFirstNameMsg.textContent = "Please enter a valid value.";
+        return false;
+    }
+
+    formFirstNameMsg.textContent = "";
+    return true;
+}
+
 function validateInputs()
 {
+    if(!validateFirstName())
+    {
+        return false;
+    }
     return true;
 }
 // Validate all required fields
@@ -88,8 +105,5 @@ function validateInputs()
 // Message should disappear automatically after 3 seconds
 // Use setTimeout() for automatic disappearance
 
-// SOME TESTING CODE
-formSubmitBtn.addEventListener("click", function(){
-    alert("The Submit button was pressed");
-});
+
 
