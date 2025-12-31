@@ -48,14 +48,14 @@ const formResetBtn = document.getElementById("idResetButton");
 // 6. clearForm() - Clear all form fields after successful submission
 
 // Real-time Character Counter:
-// Display "X/20 characters" below message textarea
-// Update counter as user types
-// Change color to red if below 20 characters
-// Change color to green if 20 or more characters
+// Update counter "x/20 characters" as user types
 formMessage.addEventListener("keyup", function(){
     const text = formMessage.value;
     const count = text.length;
     formMsgCharCount.textContent = (`${count}/20 characters`);
+
+    // Change message color to red if below 20 characters, else change color to green
+    formMessage.style.color = (count < 20) ? "red" : "green";
 });
 
 // Form Submission:
