@@ -41,9 +41,17 @@ li {
   margin: 10px 0;
 }
 
+.name-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
 input[type=text],
 textarea,
-#email {
+#email,
+#phone,
+#subject {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -52,11 +60,17 @@ textarea,
   margin-bottom: 16px;
 }
 
-input[type=submit] {
+input[type=submit],
+[type=reset] {
   background-color: #04AA6D;
   color: white;
   padding: 8px 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+input[type=reset] {
+  background-color: #f10707;
+  color: rgb(0, 5, 38);
 }

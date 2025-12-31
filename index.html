@@ -24,7 +24,9 @@
                 width="200" height="200">
 
             <div id="AboutMeTextAndTable" class="about-me-grid-item">
-                <p id="AboutMeText">I grew up in a small town in India, and one of my fondest childhood memories is all the fun I had with my school friends. Our school teachers were great. They and my parents are my inspiration.</p>
+                <p id="AboutMeText">I grew up in a small town in India, and one of my fondest childhood memories is all
+                    the fun I had with my school friends. Our school teachers were great. They and my parents are my
+                    inspiration.</p>
 
                 <table id="AboutMeTable">
                     <tr>
@@ -47,7 +49,8 @@
     <section id="InterestsSection"></section>
 
     <h2>Academic Interests & Hobbies</h2>
-    <h4>I became interested in CAD/CAE software development during my undergraudate program in Mechanical Engineering.</h4>
+    <h4>I became interested in CAD/CAE software development during my undergraudate program in Mechanical Engineering.
+    </h4>
 
     <ul>
         <li>DIY Electronics: I like leaming how things work</li>
@@ -67,18 +70,39 @@
 
     <section id="ContactMeSection">
         <h2>Contact Me</h2>
-        <form action="" method="post">
-            <label for="fullname">Name:</label>
-            <input type="text" id="fullname" class="formField" name="name_fullname" placeholder="Your name..">
+        <form action="#" method="post">
+            <div class="name-grid-container">
+                <div class="name-grid-item">
+                    <label for="fName">First Name</label>
+                    <input type="text" id="fName" class="formField" name="name_fName" placeholder="First name..">
+                </div>
 
-            <label for="email">Email:</label>
+                <div class="name-grid-item">
+                    <label for="lName">Last Name</label>
+                    <input type="text" id="lName" class="formField" name="name_lName" placeholder="Last name..">
+                </div>
+            </div>
+
+            <label for="email">Email</label>
             <input type="email" id="email" class="formField" name="name_email"
                 placeholder="firstname.lastname@provider.com">
 
-            <label for="message">Message:</label><br>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" class="formField" name="name_phone">
+
+            <label for="subject">Subject</label>
+            <select id="subject" class="formField" name="name_subject">
+                <option value="General">General Inquiries</option>
+                <option value="Sales">Sales & Partnerships</option>
+                <option value="Support">Support & Issues</option>                
+            </select>
+
+            <label for="message">Message:</label>
             <textarea id="message" class="formField" name="name_message" rows="4" cols="10" wrap="soft"
-                placeholder="Write something.."></textarea> </textarea>
+                placeholder="Write something.."></textarea>
+
             <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
         </form>
     </section>
 </body>
