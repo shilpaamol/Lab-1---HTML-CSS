@@ -65,24 +65,23 @@
 
     <section id="idContactMeSection">
         <h2 id="idContactMeCaption">Contact Me</h2>
-        <form  id="idContactMeForm" action="#" method="">
+        <form  id="idContactMeForm" action="#" method="" target="frame">
             <div class="name-grid-container">
                 <div class="name-grid-item">
                     <label for="idFirstName">First Name</label>
-                    <label id="idFirstNameMsg" class="ErrorMessage"></label>
+                    <label id="idFirstNameErr" class="ErrorMessage"></label>
                     <input id="idFirstName" type="text" class="formField" name="fName">
-                    
                 </div>
 
                 <div class="name-grid-item">
                     <label for="idLastName">Last Name</label>
-                    <label id="idLastNameMsg" class="ErrorMessage"></label>
+                    <label id="idLastNameErr" class="ErrorMessage"></label>
                     <input id="idLastName" type="text" class="formField" name="lName" placeholder="Last name..">                    
                 </div>
             </div>
 
             <label for="idEmail">Email</label>
-            <label id="idEmailMsg" class="ErrorMessage"></label>
+            <label id="idEmailErr" class="ErrorMessage"></label>
             <input id="idEmail" type="email" class="formField" name="email">            
 
             <label for="idPhone">Phone Number</label>
@@ -96,13 +95,15 @@
             </select>
 
             <label for="idMessage">Message:</label>
-            <textarea id="idMessage" class="formField" name="message" rows="4" cols="10" wrap="soft"
-                placeholder="Write something.."></textarea>
+            <label id="idMessageErr" class="ErrorMessage"></label>
+            <textarea id="idMessage" class="formField" name="message" rows="4" cols="10" wrap="soft"></textarea>
             <p id="idMessageCharCount" class="formField">"0/20 characters"</p>
 
             <input id="idSubmitButton" type="submit" value="Submit">
             <input id="idResetButton" type="reset" value="Reset">
         </form>
+
+        <iframe name="frame"></iframe>
     </section>
 </body>
 <script src="scripts/contact.js"></script>

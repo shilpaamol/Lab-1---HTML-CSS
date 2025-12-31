@@ -79,3 +79,7 @@ input[type=reset] {
   color: red;
   font-weight: bold;
 }
+
+iframe{
+  display: none;
+}

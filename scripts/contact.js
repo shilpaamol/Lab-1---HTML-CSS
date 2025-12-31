@@ -30,22 +30,20 @@ Success Message:
 // Store them in variables for easy access
 const form = document.getElementById("idContactMeForm");
 const formFirstName = document.getElementById("idFirstName");
-const formFirstNameMsg = document.getElementById("idFirstNameMsg");
+const formFirstNameErr = document.getElementById("idFirstNameErr");
 const formLastName = document.getElementById("idLastName");
-const formLastNameMsg = document.getElementById("idLastNameMsg");
+const formLastNameErr = document.getElementById("idLastNameErr");
 const formEmail = document.getElementById("idEmail");
-const formEmailMsg = document.getElementById("idEmailMsg");
+const formEmailErr = document.getElementById("idEmailErr");
 const formPhone = document.getElementById("idPhone");
 const formSubject = document.getElementById("idSubject");
 const formMessage = document.getElementById("idMessage");
+const formMessageErr = document.getElementById("idMessageErr");
 const formMsgCharCount = document.getElementById("idMessageCharCount");
 const formSubmitBtn = document.getElementById("idSubmitButton");
 const formResetBtn = document.getElementById("idResetButton");
 
 // Validation Functions:
-// 1. validateName() - Check if name contains only letters (no numbers or special characters)
-// 2. validateEmail() - Check if email format is valid (contains @ and domain)
-// 3. validateMessage() - Check if message is at least 20 characters long
 // 4. showError() - Display error message below the field
 // 5. clearError() - Remove error message when field is valid
 // 6. clearForm() - Clear all form fields after successful submission
@@ -78,31 +76,31 @@ form.addEventListener("submit", function (event) {
 // Check if name contains only letters (no numbers or special characters)
 function validateName() {
     let retVal = true;
-    formFirstNameMsg.textContent = "";
-    formLastNameMsg.textContent = "";
+    formFirstNameErr.textContent = "";
+    formLastNameErr.textContent = "";
 
-    const errorMsgNonAlpha = "Please use only letters: \"a\" to \"z\" or \"A\" to \"Z\".";
-    const errorMsgEmptyStr = "This field cannot be empty.";
+    const errorNonAlpha = "Please use only letters: \"a\" to \"z\" or \"A\" to \"Z\".";
+    const errorEmptyStr = "This field cannot be empty.";
 
     const regExp = /[a-zA-Z]/; // We are allowing ASCII alpha characters only
 
     // validate first name
     if (formFirstName.value.length === 0) {
-        formFirstNameMsg.textContent = errorMsgEmptyStr;
+        formFirstNameErr.textContent = errorEmptyStr;
         retVal &= false;
     }
     else if (!regExp.test(formFirstName.value)) {
-        formFirstNameMsg.textContent = errorMsgNonAlpha;
+        formFirstNameErr.textContent = errorNonAlpha;
         retVal &= false;
     }
 
     // validate last name
     if (formLastName.value.length === 0) {
-        formLastNameMsg.textContent = errorMsgEmptyStr;
+        formLastNameErr.textContent = errorEmptyStr;
         retVal &= false;
     }
     else if (!regExp.test(formLastName.value)) {
-        formLastNameMsg.textContent = errorMsgNonAlpha;
+        formLastNameErr.textContent = errorNonAlpha;
         retVal &= false;
     }
 
@@ -111,23 +109,32 @@ function validateName() {
 
 function validateEmail() {
     let retVal = true;
-    formEmailMsg.textContent = "";
+    formEmailErr.textContent = "";
 
-    const errorMsgNonAlpha = "Please use only letters: \"a\" to \"z\" or \"A\" to \"Z\".";
-    const errorMsgEmptyStr = "This field cannot be empty.";
+    const errorNonAlpha = "Please use only letters: \"a\" to \"z\" or \"A\" to \"Z\".";
+    const errorEmptyStr = "This field cannot be empty.";
 
     const regExp = /[a-zA-Z]/; // We are allowing ASCII alpha characters only
 
     if (formEmail.value.length === 0) {
-        formEmailMsg.textContent = errorMsgEmptyStr;
+        formEmailErr.textContent = errorEmptyStr;
         retVal &= false;
     }
     /*else if (!regExp.test(formEmail.value)) {
-        formEmailMsg.textContent = errorMsgNonAlpha;
+        formEmailErr.textContent = errorNonAlpha;
         retVal &= false;
     }
     return retVal;*/
     return retVal;
+}
+
+function validateMessage() {
+    formMessageErr.textContent = "";
+    if (formMessage.value.length < 20) {
+        formMessageErr.textContent = "The message must contain at least 20 characters";
+        return false;
+    }
+    return true;
 }
 
 function validateInputs() {
@@ -137,6 +144,10 @@ function validateInputs() {
     }
 
     if (!validateEmail()) {
+        retVal &= false;
+    }
+
+    if (!validateMessage()) {
         retVal &= false;
     }
 
