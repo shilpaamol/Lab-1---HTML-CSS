@@ -79,8 +79,8 @@ function validateName() {
     formFirstNameErr.textContent = "";
     formLastNameErr.textContent = "";
 
-    const errorNonAlpha = "Please use only letters: \"a\" to \"z\" or \"A\" to \"Z\".";
-    const errorEmptyStr = "This field cannot be empty.";
+    const errorNonAlpha = "Use letters: \"a\" to \"z\" or \"A\" to \"Z\".";
+    const errorEmptyStr = "Cannot be empty.";
 
     const regExp = /[a-zA-Z]/; // We are allowing ASCII alpha characters only
 
@@ -108,30 +108,28 @@ function validateName() {
 }
 
 function validateEmail() {
-    let retVal = true;
     formEmailErr.textContent = "";
 
-    const errorNonAlpha = "Please use only letters: \"a\" to \"z\" or \"A\" to \"Z\".";
-    const errorEmptyStr = "This field cannot be empty.";
-
-    const regExp = /[a-zA-Z]/; // We are allowing ASCII alpha characters only
-
-    if (formEmail.value.length === 0) {
-        formEmailErr.textContent = errorEmptyStr;
-        retVal &= false;
+    const email = formEmail.value;
+    if (email.length === 0) {
+        formEmailErr.textContent = "Cannot be empty.";
+        return false;
     }
-    /*else if (!regExp.test(formEmail.value)) {
-        formEmailErr.textContent = errorNonAlpha;
-        retVal &= false;
+
+    const atSymbol = email.indexOf('@');
+    const dot = email.lastIndexOf('.');    
+    if (atSymbol > 0 && dot > atSymbol)
+    {
+        return true;
     }
-    return retVal;*/
-    return retVal;
+    formEmailErr.textContent = "Enter valid email.";
+    return false;
 }
 
 function validateMessage() {
     formMessageErr.textContent = "";
     if (formMessage.value.length < 20) {
-        formMessageErr.textContent = "The message must contain at least 20 characters";
+        formMessageErr.textContent = "Must contain at least 20 characters";
         return false;
     }
     return true;
