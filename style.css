@@ -41,6 +41,19 @@ li {
   margin: 10px 0;
 }
 
+/*From https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_images_side_by_side*/
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .name-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
