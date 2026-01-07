@@ -49,9 +49,9 @@ formMessage.addEventListener("keyup", function () {
 
     // Change message color to red if below 20 or above 40 characters,
     //  else change color to green
-    const countOK = (msgCharCount < 20 || msgCharCount > 40)
-    formMessage.style.color =  countOK ? "red" : "green";
-    formMsgCharCount.style.color =  countOK ? "red" : "green";
+    const countError = (msgCharCount < 20 || msgCharCount > 40)
+    formMessage.style.color =  countError ? "red" : "green";
+    formMsgCharCount.style.color =  countError ? "red" : "green";
 });
 
 // Form Submission.
@@ -136,7 +136,7 @@ function validateEmail() {
 
 function validateMessage() {
     formMessageErr.textContent = "";
-    
+
     if (formMessage.value.length < 20) {
         formMessageErr.textContent = "Must contain at least 20 characters";
         return false;
